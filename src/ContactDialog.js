@@ -22,6 +22,8 @@ const Contact = (props) => {
 
   useEffect(() => {
     if (props.contact) {
+      console.log('gg');
+
       setId(props.contact.id);
       setFirstName(props.contact.firstName);
       setLastName(props.contact.lastName);
@@ -29,8 +31,8 @@ const Contact = (props) => {
       setEmail(props.contact.email);
       setSex(props.contact.sex);
     } else {
+      console.log('hh');
       setId(undefined);
-
       setFirstName('');
       setLastName('');
       setPhone('');
@@ -38,6 +40,7 @@ const Contact = (props) => {
       setSex('F');
     }
   }, [props.contact]);
+
   const getRndInteger = () => {
     return Math.floor(Math.random() * 2000000);
   };
@@ -96,7 +99,7 @@ const Contact = (props) => {
           variant="contained"
           onClick={() => {
             props.onSave({
-              id,
+              id: id ? id : getRndInteger(),
               firstName,
               lastName,
               phone,
