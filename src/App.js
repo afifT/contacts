@@ -61,7 +61,7 @@ function App() {
     return (contacts ?? [])
       .map((c, index) => {
         if (random && index === random.low) {
-          return contacts[random.high];
+          return { ...contacts[random.high] };
         }
         if (random && index === random.high) {
           return contacts[random.low];
@@ -129,7 +129,13 @@ function App() {
         Export
       </Button>
       <div id="myInput"></div>
-      <Box display="flex" flexDirection="column" alignItems="center" gap="20px">
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        gap="20px"
+        paddingBottom="40px"
+      >
         {(getContacts() ?? []).map((c, index) => {
           return (
             <Contact
