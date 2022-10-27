@@ -11,8 +11,10 @@ const Contact = (props) => {
       sx={{ boxShadow: 1, cursor: 'pointer' }}
       flexDirection={'column'}
       elevation={1}
-      padding="8px"
+      padding="12px"
       onClick={() => props.onClick(props.contact)}
+      backgroundColor="#FBFFFE"
+      borderRadius={'8px'}
     >
       <Typography fontSize="24px" fontWeight={700}>
         {props.contact.firstName} {props.contact.lastName}{' '}

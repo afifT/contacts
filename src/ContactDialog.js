@@ -96,7 +96,7 @@ const Contact = (props) => {
           variant="contained"
           onClick={() => {
             props.onSave({
-              id: props.contact ? props.contact.id : getRndInteger(),
+              id,
               firstName,
               lastName,
               phone,
